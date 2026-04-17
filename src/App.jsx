@@ -15,10 +15,49 @@ function App() {
       <Developer name="mojumdar" technology="javascript"></Developer>
       <Developer name="rajon" technology="python"></Developer>
       <Developer name="shabana" technology="java"></Developer>
+      <Players name="tamim" runs="76"></Players>
+      <Players name="mushi" runs="89"></Players>
+      <Salami event="Rojar Eid" amount="1000"></Salami>
+      <Salami event="Graduation" amount="5000"></Salami>
+
     </>
   )
 }
 
+// destructuring example 
+// const {name, technology} = {name: 'Mozumdar', technology: 'javascript'};
+
+// destructuring use kora function
+const props = {};
+function Players ({name, runs}){
+  console.log(props);
+  return(
+    <div className='student'>
+      <h3>Player: {name}</h3>
+      <p>Runs: {runs}</p>
+    </div>
+  )
+}
+
+// ekshathe internal CSS use and destructuring
+function Salami({event, amount=0}){ //eta default man 
+
+  // variabel type style set
+  const salamiStyle = {
+    color: 'cyan',
+    border: '3px solid orange',
+    padding: '4px',
+    margin: '2px',
+    borderRadius: '15px',
+  }
+
+  return(
+    <div style={salamiStyle}>
+      <h3>Salami for: {event}</h3>
+      <p>Amount: {amount}</p>
+    </div>
+  )
+}
 // another option of using style, without using variable, direct object
 function Developer(props){ //parameter receive korbe 
   console.log(props); //eta ekta object jar key-name value name a ja ase (mojumdar, rajon, shabana)
