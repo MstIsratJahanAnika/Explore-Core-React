@@ -1,24 +1,62 @@
+// import kora hocche ekhane
 import './App.css'
+
+import ToDo from './Todo'; //ToDo nam er function import koro Todo file theke
+
+import { EatAndSleep } from './EatAndSleep';
 
 function App() {
 
+  const oloshLifeStyle = {
+    border: '2px solid purple',
+    padding: '5px',
+    margin: '5px',
+    borderRadius: '10px'
+  }
+  
+  // const pathano 
+  const time = 50;
+
+  const sleep = "feeling sleepy";
   return (
+
     <>
       <h1>React Core Concepts</h1>
-      <Student name="Anika" dept="CSE" sem="4th"></Student>
+      <ToDo task="learn React" isDone={true} time={time}></ToDo>
+      <ToDo task="Revise JS" isDone={false}></ToDo>
+      <ToDo task="Take a shower" isDone={true}></ToDo>
+
+
+      {/* practice function part */}
+      <EatAndSleep
+        eat="pasta"
+        diet={false}
+        sleepy={sleep}>
+      </EatAndSleep>
+
+      <EatAndSleep
+        eat="no eating" 
+        diet={true}>         
+      </EatAndSleep>
+
+      <EatAndSleep eat="green tea" diet={true} sleepy={sleep}></EatAndSleep>
+      {/* isDone ekta property */}
+
+      {/* <Student name="Anika" dept="CSE" sem="4th"></Student>
       <Student name="Sabrina" dept="Textile" sem="2nd"></Student>
       <Person name="Jolil" mood="sad" age="21"></Person>
       <Person name="Kamil" mood="happy" age="17"></Person>
       <Person name="Piyash" mood="angry" age="26"></Person>
 
       {/* egula shob function er parameter a receive hobe, proti ta property object er property */}
-      <Developer name="mojumdar" technology="javascript"></Developer>
+
+      {/*<Developer name="mojumdar" technology="javascript"></Developer>
       <Developer name="rajon" technology="python"></Developer>
       <Developer name="shabana" technology="java"></Developer>
       <Players name="tamim" runs="76"></Players>
       <Players name="mushi" runs="89"></Players>
       <Salami event="Rojar Eid" amount="1000"></Salami>
-      <Salami event="Graduation" amount="5000"></Salami>
+      <Salami event="Graduation" amount="5000"></Salami> */}
 
     </>
   )
@@ -29,9 +67,9 @@ function App() {
 
 // destructuring use kora function
 const props = {};
-function Players ({name, runs}){
+function Players({ name, runs }) {
   console.log(props);
-  return(
+  return (
     <div className='student'>
       <h3>Player: {name}</h3>
       <p>Runs: {runs}</p>
@@ -40,7 +78,7 @@ function Players ({name, runs}){
 }
 
 // ekshathe internal CSS use and destructuring
-function Salami({event, amount=0}){ //eta default man 
+function Salami({ event, amount = 0 }) { //eta default man 
 
   // variabel type style set
   const salamiStyle = {
@@ -51,7 +89,7 @@ function Salami({event, amount=0}){ //eta default man
     borderRadius: '15px',
   }
 
-  return(
+  return (
     <div style={salamiStyle}>
       <h3>Salami for: {event}</h3>
       <p>Amount: {amount}</p>
@@ -59,10 +97,10 @@ function Salami({event, amount=0}){ //eta default man
   )
 }
 // another option of using style, without using variable, direct object
-function Developer(props){ //parameter receive korbe 
+function Developer(props) { //parameter receive korbe 
   console.log(props); //eta ekta object jar key-name value name a ja ase (mojumdar, rajon, shabana)
 
-  return(
+  return (
     <div style={{
       border: '2px solid green',
       borderRadius: '20px'
@@ -75,7 +113,7 @@ function Developer(props){ //parameter receive korbe
 }
 
 //eta ekta component - ek ek kaj a use kora hoy
-function Person(aboutPerson){
+function Person(aboutPerson) {
 
   // const name = 'Jolil';
   // const age = 21;
@@ -86,15 +124,15 @@ function Person(aboutPerson){
     textAlign: 'center',
   }
 
-   return (
+  return (
     // internal vabe apply koro
     <p style={PersonStyle}>I am a {aboutPerson.mood} Person named {aboutPerson.name}, age {aboutPerson.age}</p>
-   )
+  )
 }
 
 
-function Student(aboutStudent){
-  return(
+function Student(aboutStudent) {
+  return (
     <div className='student'>
       <p>Name: {aboutStudent.name}</p>
       <p>Dept: {aboutStudent.dept}</p>
@@ -103,14 +141,14 @@ function Student(aboutStudent){
   )
 }
 
-function Pet(){
+function Pet() {
 
-  return(
-      <p>Pet Cat</p>
+  return (
+    <p>Pet Cat</p>
   )
 }
 
-function Sports(){
+function Sports() {
   return (
     <div>
       <ul>
@@ -120,7 +158,7 @@ function Sports(){
       <h3>Playing Cricket</h3>
       <p>Playing and winning</p>
     </div>
-    
+
   )
 }
 export default App
