@@ -184,7 +184,8 @@
 }
 
 
-.student{
+/* ek e class property ekadhik class a use kora */
+.student, .singer{
   margin: 10px;
   padding: 10px;
   border-radius: 20px;
