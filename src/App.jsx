@@ -7,13 +7,13 @@ import { EatAndSleep } from './EatAndSleep';
 
 function App() {
 
-  const oloshLifeStyle = {
-    border: '2px solid purple',
-    padding: '5px',
-    margin: '5px',
-    borderRadius: '10px'
-  }
-  
+  // const oloshLifeStyle = {
+  //   border: '2px solid purple',
+  //   padding: '5px',
+  //   margin: '5px',
+  //   borderRadius: '10px'
+  // }
+
   // const pathano 
   const time = 50;
 
@@ -22,7 +22,8 @@ function App() {
 
     <>
       <h1>React Core Concepts</h1>
-      <ToDo task="learn React" isDone={true} time={time}></ToDo>
+      {/* <ToDo task="learn React" isDone={true} time={time}></ToDo> */}
+      <ToDo task="learn React" isDone={true} time=""></ToDo>
       <ToDo task="Revise JS" isDone={false}></ToDo>
       <ToDo task="Take a shower" isDone={true}></ToDo>
 
